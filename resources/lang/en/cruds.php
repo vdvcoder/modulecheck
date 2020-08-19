@@ -65,4 +65,12 @@ return [
             'deleted_at_helper'        => '',
         ],
     ],
+    'setting'        => [
+        'title'          => 'Settings',
+        'title_singular' => 'Setting',
+    ],
+    'cmsSetting'     => [
+        'title'          => 'Cms Settings',
+        'title_singular' => 'Cms Setting',
+    ],
 ];
