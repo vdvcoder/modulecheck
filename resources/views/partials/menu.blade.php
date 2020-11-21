@@ -57,6 +57,28 @@
                 </ul>
             </li>
         @endcan
+        @can('setting_access')
+            <li class="c-sidebar-nav-dropdown">
+                <a class="c-sidebar-nav-dropdown-toggle" href="#">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.setting.title') }}
+                </a>
+                <ul class="c-sidebar-nav-dropdown-items">
+                    @can('cms_setting_access')
+                        <li class="c-sidebar-nav-item">
+                            <a href="{{ route("admin.cms-settings.index") }}" class="c-sidebar-nav-link {{ request()->is('admin/cms-settings') || request()->is('admin/cms-settings/*') ? 'active' : '' }}">
+                                <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                                </i>
+                                {{ trans('cruds.cmsSetting.title') }}
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcan
         @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
             @can('profile_password_edit')
                 <li class="c-sidebar-nav-item">
